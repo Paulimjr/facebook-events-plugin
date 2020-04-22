@@ -1,0 +1,25 @@
+{
+  "name": "facebook-events-plugin",
+  "version": "1.0.0",
+  "description": "Facebook Events Plugin helps to log event in Facebook Analytics",
+  "cordova": {
+    "id": "facebook-events-plugin",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "repository": {
+  },
+  "keywords": [
+    "cordova",
+    "facebook",
+    "plugin",
+    "analytics",
+    "events",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Paulo Cesar Camilo",
+  "license": "MIT"
+}

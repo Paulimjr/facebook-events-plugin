@@ -1,0 +1,20 @@
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+
+dependencies {
+    //Facebook sdk
+    implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
+}
+
+android {
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}

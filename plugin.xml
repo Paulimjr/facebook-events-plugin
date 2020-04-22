@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0" id="facebook-events-plugin" version="1.0.0">
+    <name>FacebookEventsPlugin</name>
+    <description>Facebook Events Plugin helps to log event in Facebook Analytics</description>
+    <license>MIT</license>
+
+    <engines>
+        <engine name="cordova" version=">=6.4.0" />
+        <engine name="cordova-ios" version=">=4.3.0" />
+    </engines> 
+ 
+    <js-module src="www/FacebookEventsPlugin.js" name="FacebookEventsPlugin">
+        <clobbers target="cordova.plugins.FacebookEventsPlugin" />
+    </js-module>
+
+    <preference name="FACEBOOK_APP_ID"/>
+    
+    <!-- ios -->
+    <platform name="ios">
+	    
+        <config-file target="config.xml" parent="/*">
+            <feature name="FacebookEventsPlugin">
+                <param name="ios-package" value="FacebookEventsPlugin"/>
+            </feature>
+        </config-file>
+	    
+    </platform>
+    
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET" />
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FacebookEventsPlugin">
+                <param name="android-package" value="com.facebook.events.plugin.FacebookEventsPlugin"/>
+            </feature>
+        </config-file>
+
+        <!-- Adding Facebook app ID -->
+        <config-file target="res/values/strings.xml" parent="/*">
+            <string name="facebook_app_id">$FACEBOOK_APP_ID</string>
+        </config-file>
+
+        <source-file src="src/android/FacebookEventsPlugin.java" target-dir="src/com/facebook/events/plugin" />
+		<framework src="src/android/lib/facebook-events.gradle" custom="true" type="gradleReference" />
+
+    </platform>          
+</plugin>
